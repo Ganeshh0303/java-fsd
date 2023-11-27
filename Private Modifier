@@ -1,0 +1,18 @@
+class A {
+
+	private int x=5;
+	private void print() {
+	System.out.println("hi");
+
+	}
+}
+
+public class PrivateAM{
+	public static void main(String [] args) {
+		
+		A obj=new A();
+		System.out.println(obj.x);    //  ERROR -> Private Modifier can only be accessed within a class.
+		obj.print();                  //  ERROR -> Private Modifier can only be accessed within a class.
+
+	}
+}
