@@ -1,0 +1,15 @@
+public class Implicit_Explicit_TypeCasting {
+	
+	public static void main(String [] args) {
+	
+	byte a=12;              // Narrowing Type Casting.   or  EXPLICIT Type Casting.
+	short b=10;
+	float c= 1.5f;
+	int d=(int)(c);
+	
+	int e=17;               // Widening Type Casting. or  IMPLICIT Type Casting.
+	double f=17.5;
+	
+	
+	System.out.println(d);
+	System.out.println(f);
