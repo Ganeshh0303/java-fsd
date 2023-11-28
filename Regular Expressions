@@ -1,0 +1,22 @@
+package AssistedPractice;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Implementation_of_Regular_Expressions {
+	public static void main(String args []) {
+		
+	
+	String text="Implementation of Regular Expressions 01234 ";
+	
+	String regex="[0-9]";
+	Pattern pattern=Pattern.compile(regex);
+	Matcher matcher=pattern.matcher(text);
+	
+	while(matcher.find()) {
+		System.out.printf("\n Found a match from %s Ending at %s",matcher.start(),matcher.end());
+	}
+
+	}
+
+}
