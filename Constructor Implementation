@@ -1,0 +1,31 @@
+public class cunstructor_implementation {
+	
+	//  Default constructor
+	cunstructor_implementation(){   //  constructor name should be same as class name
+		                            //  constructor should not contain return type
+		
+		System.out.println("Printing from constructor");
+	}
+	
+	int id;
+	String name;
+	cunstructor_implementation(int a, String b){    //  Parameterized constructor
+		id=a;
+		name=b;
+		System.out.println("The id " + " of " + name +" is " + id);
+
+		
+	}
+	
+	
+	public static void main(String [] args) {
+		
+		cunstructor_implementation obj1 = new cunstructor_implementation(); //Calling Default constructor
+		
+		 //calling parameterized constructors
+		cunstructor_implementation obj2 = new cunstructor_implementation(101,"Ram"); //calling parameterized constructors
+		cunstructor_implementation obj3 = new cunstructor_implementation(102,"Raj");
+
+	}
+
+}
