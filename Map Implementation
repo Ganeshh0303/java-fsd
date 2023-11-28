@@ -1,0 +1,26 @@
+import java.util.HashMap;
+import java.util.TreeMap;
+
+public class maps_implementationn {
+	public static void main(String [] args){
+	HashMap<String,Integer> MapList=new HashMap<>();   //Hash Map Implementation.
+	MapList.put("Ram",1);
+	MapList.put("Raj",2);
+	System.out.println(MapList);
+	
+	
+	TreeMap<String,Integer> MapList1=new TreeMap<>();   //Tree Map Implementation.
+	MapList1.put("Ram",1);
+	MapList1.put("Raj",2);
+	MapList1.put("Ravi",3);
+	System.out.println(MapList1);
+	MapList1.remove("Ravi");
+	System.out.println(MapList1);
+
+	//There are different map Implementations like Enum Map,LinkedHashMap,ConcurrentHashMap
+	
+
+	
+	}
+	
+}
