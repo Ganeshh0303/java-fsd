@@ -1,0 +1,15 @@
+public class method_implementation {
+	
+	public static void print() {
+		
+		System.out.println("Printing from Method");
+		
+	}
+	
+	public static void main(String [] args) {
+		
+		print();      //calling method "print()"  ,It will execute the print method.
+		
+	}
+
+}
