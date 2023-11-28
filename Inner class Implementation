@@ -1,0 +1,17 @@
+public class InnerClass_Implementation {
+	
+	int x=30;
+	
+	class inner{                  //Inner class
+		void print(){
+			System.out.println(x);	
+		}	
+	}
+
+	public static void main(String [] args) {
+		InnerClass_Implementation obj= new InnerClass_Implementation();
+		InnerClass_Implementation.inner objOfInner =obj.new inner();       //Inner class object.
+		objOfInner.print();
+	}
+
+}
