@@ -1,0 +1,38 @@
+ublic class TryCatch {
+	public static void main(String [] args) {
+		try {
+
+
+//			int num=30/0;
+
+			int arr[]= {1,2,3,4,5};	
+			System.out.println(arr[10]);
+//			String str=null;
+//			System.out.println(str.length());
+		
+		}
+		
+		catch(ArithmeticException e) {
+			
+			System.out.println("Denominator should not be Zero while dividing" );
+			System.out.println("Error :" + e );
+			
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			
+			System.out.println("User is trying to access array index out of range");
+			System.out.println("Error;" + e);
+		}
+		
+		finally {
+			System.out.println("This block always executes ... ");
+			
+
+		}
+
+
+	}
+
+	}	
+
+}
