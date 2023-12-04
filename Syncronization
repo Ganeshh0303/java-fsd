@@ -1,0 +1,45 @@
+public class Syncronization {
+
+	public static void main(String args[]){  
+		Syncronization o = new Syncronization();//only one object  
+		Thread1 t1=new Thread1(o);  
+		Thread2 t2=new Thread2(o);  
+		t1.start();  
+		t2.start();  
+	}
+
+	void printTable(int n){//method not synchronized  
+		   for(int i=1;i<=5;i++){  
+		     System.out.println(n*i);  
+		     try{  
+		      Thread.sleep(400);  
+		     }
+		     catch(Exception e){System.out.println(e);}  
+		   }  
+
+		 } 
+
+
+
+		class Thread1 extends Thread{  
+			Syncronization t;  
+		    Thread1(Syncronization t){  
+		    this.t=t;  
+		    }  
+	     	public void run(){  
+	    	t.printTable(5);  
+		    } 
+		}  
+
+		class Thread2 extends Thread{  
+			Syncronization t;  
+	    	Thread2(Syncronization t){  
+		    this.t=t;  
+		    }
+	    	public void run(){  
+	    		t.printTable(100);  
+	    	}  
+
+		}
+
+	}  
