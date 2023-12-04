@@ -1,0 +1,16 @@
+package AssistedPractice;
+
+public class ThreadRunnableInterface implements Runnable {
+	public void run() {
+
+		System.out.println("thread is running");
+	}
+
+	public static void main(String [] args) {
+
+		ThreadRunnableInterface o1=new ThreadRunnableInterface();
+		Thread t1=new Thread(o1);
+		t1.start();
+	}
+
+}
