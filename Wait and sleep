@@ -1,0 +1,16 @@
+public class Sleep_and_Wait {
+
+	public static void main(String [] args) throws InterruptedException {
+
+		Thread.sleep(2000);
+		System.out.println(Thread.currentThread().getName()+" is woken after 2 sec");
+		Object obj = new Object();
+		synchronized(obj) {
+			obj.wait(2000);
+			System.out.println(obj+" is woken after 2 seconds");
+
+		}
+
+	}
+
+}
