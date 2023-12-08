@@ -1,0 +1,71 @@
+package Phase1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+public class Camera_Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Welcome to Camera Rental Application");
+        System.out.println("Developed by DESAM NAGA GANESH REDDY");
+
+        CameraRentalApp rentalApp = new CameraRentalApp(1000); // Initial wallet balance
+
+        int choose;
+        do {
+            
+            System.out.println("1. Add a new camera");
+            System.out.println("2. Show available cameras");
+            System.out.println("3. Rent a camera");
+            System.out.println("0. Exit");
+            System.out.print("Choose from the options [1,2,3,0]");
+            choose = sc.nextInt();
+            
+            
+
+            switch (choose) {
+                case 1:
+                	
+                    System.out.print("Enter camera details (brand name : ");
+                    String brand_name = sc.next();
+                    System.out.print("Enter camera details (brand model : ");
+
+                    String model_name = sc.next();
+                    System.out.print("Enter camera details (Rent Amount : ");
+                    double rentAmount_per_day= sc.nextDouble();
+
+                    rentalApp.addCamera(brand_name, model_name, rentAmount_per_day);
+                    System.out.println("Camera added successfully.");
+                    break;
+                case 2:
+                    rentalApp.displayAvailableCameras();
+                    break;
+                case 3:        	
+                    System.out.print("Enter the option of the camera you want to rent: ");
+                    int option = sc.nextInt();
+                    rentalApp.rentCamera(option);
+                    break;
+                case 0:
+                    System.out.println("Exiting the application. Thank you!");
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        } while (choose != 0);
+
+        sc.close();
+    }
+}
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
