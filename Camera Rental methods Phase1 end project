@@ -1,0 +1,74 @@
+package Phase1;
+
+import java.util.*;
+
+class Camera {
+    String brand_name="Nani2";
+    String model_name;
+    double rentAmount_per_day;
+    boolean available;
+
+    public Camera(String brand_name, String model_name, double rentAmount_per_day) {
+        this.brand_name = brand_name;
+        this.model_name = model_name;
+        this.rentAmount_per_day = rentAmount_per_day;
+        this.available = true;
+    }
+   
+}
+
+class User {
+    double your_balance;
+
+    public User(double your_balance) {
+        this.your_balance = your_balance;
+    }
+}
+
+class CameraRentalApp {
+    ArrayList<Camera> cameraList;
+    User user;
+
+    public CameraRentalApp(double your_balance) {
+        cameraList = new ArrayList<Camera>();
+        user = new User(your_balance);
+    }
+
+    public void addCamera(String brand_name, String model_name, double rentAmount_per_day) {
+        Camera cam = new Camera( brand_name,model_name, rentAmount_per_day);
+        cameraList.add(cam);
+    }
+
+    public void rentCamera(int option) {
+        if (cameraList.isEmpty()) {
+            System.out.println("No Data Present. Add cameras to the list.");
+            return;
+        }
+
+        if (option < 0 || option >= cameraList.size()) {
+            System.out.println("Invalid camera selection.");
+            return;
+        }
+
+        Camera selectedCamera = cameraList.get(option);
+
+        if (selectedCamera.available && user.your_balance >= selectedCamera.rentAmount_per_day) {
+            selectedCamera.available = false;
+            user.your_balance = user.your_balance - selectedCamera.rentAmount_per_day;
+            System.out.println("Camera rented successfully: " + selectedCamera.brand_name);
+        } else if (!selectedCamera.available) {
+            System.out.println("Camera is not available for rent.");
+        } else {
+            System.out.println("Insufficient wallet amount. Add funds to your wallet.");
+        }
+    }
+
+    public void displayAvailableCameras() {
+        System.out.println("Available Cameras:");
+        for (int i=0;i<cameraList.size();i++) {
+        	Camera camera = cameraList.get(i);
+        	System.out.println("[" + i + "]" +camera.brand_name);
+        	}	
+        }
+    }
+
